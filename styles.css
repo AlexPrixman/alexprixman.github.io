@@ -1592,3 +1592,6 @@ h2 {
     font-size: 28px !important;
   }
 }
+
+.rentdesk-card { margin-top: 42px; }
+.rentdesk-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 18px 38px rgba(0,0,0,.08); }

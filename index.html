@@ -143,7 +143,7 @@
               <h2 id="work-title">from idea to working software.</h2>
             </div>
             <p class="section-caption">
-              a complete application.<br />the decisions behind it.
+              complete applications.<br />the decisions behind them.
             </p>
           </div>
           <article class="project-card" aria-labelledby="technotes-title">
@@ -412,6 +412,33 @@
                   on GitHub.
                 </p>
               </div>
+            </div>
+          </details>
+
+          <article class="project-card rentdesk-card" aria-labelledby="rentdesk-title">
+            <div class="project-overview">
+              <div class="project-label"><span class="project-index">02</span><span class="eyebrow">live full-stack application</span></div>
+              <h3 id="rentdesk-title">rentdesk<span aria-hidden="true">.</span></h3>
+              <p class="project-intro">from reservation to return. one clear workspace.</p>
+              <p class="project-description">a car rental operations app for customers, fleet, reservations, pickup, return, and payments. employees manage daily operations; managers alone manage staff accounts.</p>
+              <div class="tags" aria-label="RentDesk technologies"><span>React</span><span>TypeScript</span><span>Express</span><span>PostgreSQL</span><span>Playwright</span></div>
+              <div class="project-links">
+                <a class="button dark" href="https://rentdesk-alexprixman.onrender.com" target="_blank" rel="noopener noreferrer">try the live demo <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="https://github.com/AlexPrixman/rent_car" target="_blank" rel="noopener noreferrer">source code <span aria-hidden="true">↗</span></a>
+              </div>
+              <p class="project-note">shared fictional data. simulated payments. the first visit after inactivity may take about a minute.</p>
+            </div>
+            <div class="project-visual rentdesk-preview">
+              <div class="preview-caption"><span class="small-dot" aria-hidden="true"></span> interface preview <span>sample data</span></div>
+              <img src="assets/rentdesk-desktop.png" alt="RentDesk dashboard showing fleet counts and a completed fictional rental" width="1280" height="878" loading="lazy" />
+            </div>
+          </article>
+          <details class="case-study">
+            <summary><span>the RentDesk case study</span><span class="summary-hint">problem → decisions → result</span><span class="summary-icon" aria-hidden="true">+</span></summary>
+            <div class="case-study-body">
+              <div><p class="eyebrow">the problem</p><h4>connect the entire rental lifecycle.</h4><p>a legacy PHP project needed consistent staff permissions, availability checks, pricing, payment tracking, and durable rental history.</p></div>
+              <div><p class="eyebrow">the decisions</p><h4>keep business rules in the API.</h4><p>rebuild with React and Express, enforce manager-only staff changes, store money in integer cents, and protect bookings with database transactions. verify Stripe and PayPal payments on the server; simulate them in the public demo.</p></div>
+              <div><p class="eyebrow">the result</p><h4>a tested app you can try.</h4><p>a live staff workspace on Render with persistent PostgreSQL records and sessions on Neon. SQLite and PostgreSQL API tests, desktop/mobile browser workflows, and Docker startup checks run in CI. the original PHP source remains on the legacy-php branch.</p></div>
             </div>
           </details>
         </div>

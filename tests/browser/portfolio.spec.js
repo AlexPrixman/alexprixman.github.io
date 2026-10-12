@@ -9,7 +9,7 @@ test("loads without failed assets and fits the viewport", async ({ page }) => {
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.locator(".project-card")).toContainText("techNotes");
+  await expect(page.locator('article[aria-labelledby="technotes-title"]')).toContainText("techNotes");
   expect(failures).toEqual([]);
   expect(errors).toEqual([]);
   expect(
@@ -51,7 +51,7 @@ test("engineering tabs support keyboard and the case study expands", async ({
     page.getByRole("tab", { name: "quality", exact: true }),
   ).toBeFocused();
   await expect(page.getByRole("tabpanel")).toContainText("51 passing tests");
-  await page.locator("summary").click();
+  await page.locator("summary").filter({hasText:"the techNotes case study"}).click();
   await expect(
     page.getByRole("heading", { name: "an unfinished workflow.", exact: true }),
   ).toBeVisible();
@@ -136,4 +136,16 @@ test("unknown paths show a useful 404", async ({ page }) => {
   await expect(
     page.getByRole("link", { name: "back to the portfolio", exact: false }),
   ).toHaveAttribute("href", "/");
+});
+
+test("RentDesk has a live demo, source link, screenshot, and expandable case study", async ({page}) => {
+  await page.goto("/#work");
+  const card=page.locator('article[aria-labelledby="rentdesk-title"]');
+  await expect(card.getByRole("heading",{name:"rentdesk",exact:true})).toBeVisible();
+  await expect(card.getByRole("link",{name:"try the live demo"})).toHaveAttribute("href","https://rentdesk-alexprixman.onrender.com");
+  await expect(card.getByRole("link",{name:"source code"})).toHaveAttribute("href","https://github.com/AlexPrixman/rent_car");
+  await expect(card.getByRole("img")).toBeVisible();
+  await page.locator("summary").filter({hasText:"the RentDesk case study"}).click();
+  await expect(page.getByRole("heading",{name:"a tested app you can try."})).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

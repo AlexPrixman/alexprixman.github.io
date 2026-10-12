@@ -49,3 +49,7 @@ The validation workflow is independent of GitHub Pages’ own deployment workflo
 - Replace `assets/alex-prixman-resume.pdf` when the résumé changes.
 - Keep test counts factual; update them when the project’s suites change.
 - Metadata, sitemap and social preview use the GitHub Pages URL.
+
+## RentDesk
+
+The selected-work section includes the live RentDesk demo at https://rentdesk-alexprixman.onrender.com, its source repository, a dashboard screenshot, and its engineering case study. Demo accounts and fictional-data notices are shown in the app; payment checkout is simulated. Render Free can take about a minute to wake after inactivity.
