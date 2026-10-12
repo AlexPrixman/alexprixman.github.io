@@ -1,5 +1,7 @@
 # alexprixman.github.io
 
+[Open the live portfolio](https://alexprixman.github.io/).
+
 Alex Prixman’s software engineering portfolio. A responsive, accessible static website featuring the complete techNotes application, professional experience, engineering capabilities, and a concise downloadable English résumé.
 
 ## Content
@@ -32,7 +34,7 @@ npm run test:e2e
 
 Unit/DOM tests cover keyboard and mobile navigation, theme persistence, clipboard failures, project tabs, and link/asset integrity. Playwright checks desktop/mobile navigation, tabs, theme persistence, downloads, JavaScript-free rendering, broken assets and overflow. GitHub Actions runs the complete check sequence.
 
-Initial verification: all 13 unit/DOM checks and the dependency audit pass. The résumé was rendered and visually inspected. The 16 desktop/mobile Playwright cases are included for CI but have not yet been executed: this build environment does not provide the supported website browser preview.
+Verified in GitHub Actions: all 13 unit/DOM tests and all 16 desktop/mobile Playwright cases pass. The production build succeeds and npm audit reports zero known vulnerabilities. The résumé was rendered and visually inspected. GitHub Pages successfully deploys the site from `main` / `/(root)`.
 
 ## Free GitHub Pages hosting
 
