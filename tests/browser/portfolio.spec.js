@@ -149,3 +149,22 @@ test("RentDesk has a live demo, source link, screenshot, and expandable case stu
   await expect(page.getByRole("heading",{name:"a tested app you can try."})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
+
+test("CircleChat is discoverable with working project links and case study", async ({ page }) => {
+  await page.goto("/#work");
+  const card = page.locator('article[aria-labelledby="circlechat-title"]');
+  await expect(card.getByRole("heading", { name: "circlechat", exact: true })).toBeVisible();
+  await expect(card.getByRole("link", { name: "try the live demo" })).toHaveAttribute(
+    "href",
+    "https://circlechat-alexprixman.onrender.com",
+  );
+  await expect(card.getByRole("link", { name: "source code" })).toHaveAttribute(
+    "href",
+    "https://github.com/AlexPrixman/websockets-chat",
+  );
+  await expect(card.getByRole("img", { name: /illustrative circlechat group conversation/i })).toBeVisible();
+  await expect(card).toContainText("sample data");
+  await page.locator("summary").filter({ hasText: "the circlechat case study" }).click();
+  await expect(page.getByRole("heading", { name: "a working messenger, verified end to end." })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
