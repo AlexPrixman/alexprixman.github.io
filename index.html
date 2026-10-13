@@ -441,6 +441,61 @@
               <div><p class="eyebrow">the result</p><h4>a tested app you can try.</h4><p>a live staff workspace on Render with persistent PostgreSQL records and sessions on Neon. SQLite and PostgreSQL API tests, desktop/mobile browser workflows, and Docker startup checks run in CI. the original PHP source remains on the legacy-php branch.</p></div>
             </div>
           </details>
+
+          <article class="project-card circlechat-card" aria-labelledby="circlechat-title">
+            <div class="project-overview">
+              <div class="project-label">
+                <span class="project-index">03</span><span class="eyebrow">live real-time application</span>
+              </div>
+              <h3 id="circlechat-title">circlechat<span aria-hidden="true">.</span></h3>
+              <p class="project-intro">a little closer. one conversation at a time.</p>
+              <p class="project-description">
+                a responsive messenger with email/password accounts, direct and group conversations,
+                live messages, typing indicators, read receipts, and private photo sharing.
+                conversations stay available when you come back.
+              </p>
+              <div class="tags" aria-label="CircleChat technologies">
+                <span>React</span><span>TypeScript</span><span>Socket.IO</span><span>PostgreSQL</span><span>Neon Auth</span><span>Playwright</span>
+              </div>
+              <div class="project-links">
+                <a class="button dark" href="https://circlechat-alexprixman.onrender.com" target="_blank" rel="noopener noreferrer">try the live demo <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="https://github.com/AlexPrixman/websockets-chat" target="_blank" rel="noopener noreferrer">source code <span aria-hidden="true">↗</span></a>
+              </div>
+              <p class="project-note">create an account to try it. free hosting may take a moment to wake up.</p>
+            </div>
+            <div class="project-visual circlechat-visual">
+              <div class="preview-caption"><span class="small-dot" aria-hidden="true"></span> interface preview <span>sample data</span></div>
+              <div class="chat-preview" role="img" aria-label="Illustrative CircleChat group conversation with sample messages">
+                <div class="chat-preview-header">
+                  <span class="chat-preview-avatar">lc</span>
+                  <div><strong>launch crew</strong><small><span class="chat-online-dot"></span> 3 people, one conversation</small></div>
+                  <span class="chat-preview-brand">circlechat.</span>
+                </div>
+                <div class="chat-preview-stream">
+                  <span class="chat-preview-day">today</span>
+                  <div class="chat-preview-message"><small>morgan</small><p>the new flow looks great on mobile.</p><time datetime="10:42">10:42</time></div>
+                  <div class="chat-preview-message mine"><small>you</small><p>thanks! the tests are passing, too.</p><time datetime="10:43">10:43 · read</time></div>
+                  <div class="chat-preview-message"><small>riley</small><p>nice. ready for the next release?</p><time datetime="10:44">10:44</time></div>
+                  <span class="chat-preview-typing">morgan is typing<span aria-hidden="true">…</span></span>
+                </div>
+                <div class="chat-preview-composer"><span>write a little something…</span><span class="chat-preview-send" aria-hidden="true">↗</span></div>
+              </div>
+              <div class="preview-footnote"><span>live conversations</span><span>desktop + mobile</span></div>
+            </div>
+            <div class="project-metrics">
+              <div><strong>22</strong><span>API, auth &amp; real-time tests</span></div>
+              <div><strong>11</strong><span>frontend unit tests</span></div>
+              <div><strong>6</strong><span>desktop &amp; mobile browser tests</span></div>
+            </div>
+          </article>
+          <details class="case-study">
+            <summary><span>the circlechat case study</span><span class="summary-hint">problem → decisions → result</span><span class="summary-icon" aria-hidden="true">+</span></summary>
+            <div class="case-study-body">
+              <div><p class="eyebrow">the problem</p><h4>make a conversation feel immediate.</h4><p>a messenger needs more than a live connection. messages must survive reloads, photos must stay within the conversation, and sign-out must close access even when tokens have refreshed.</p></div>
+              <div><p class="eyebrow">the decisions</p><h4>pair live delivery with durable history.</h4><p>use Socket.IO for live updates and PostgreSQL for message history. enforce conversation membership in the API, normalize uploaded images, keep photos in private object storage, and persist token revocation.</p></div>
+              <div><p class="eyebrow">the result</p><h4>a working messenger, verified end to end.</h4><p>39 passing tests cover the API, frontend, and desktop/mobile browser flows. the live Render app uses Neon authentication, PostgreSQL, and private photo storage. messaging, photo access, restored sessions, logout, and data persistence were verified after deployment.</p></div>
+            </div>
+          </details>
         </div>
       </section>
 

@@ -2,7 +2,7 @@
 
 [Open the live portfolio](https://alexprixman.github.io/).
 
-Alex Prixman’s software engineering portfolio. A responsive, accessible static website featuring the complete techNotes application, professional experience, engineering capabilities, and a concise downloadable English résumé.
+Alex Prixman’s software engineering portfolio. A responsive, accessible static website featuring techNotes, RentDesk, CircleChat, professional experience, engineering capabilities, and a concise downloadable English résumé.
 
 ## Content
 
@@ -34,7 +34,7 @@ npm run test:e2e
 
 Unit/DOM tests cover keyboard and mobile navigation, theme persistence, clipboard failures, project tabs, and link/asset integrity. Playwright checks desktop/mobile navigation, tabs, theme persistence, downloads, JavaScript-free rendering, broken assets and overflow. GitHub Actions runs the complete check sequence.
 
-Verified in GitHub Actions: all 13 unit/DOM tests and all 16 desktop/mobile Playwright cases pass. The production build succeeds and npm audit reports zero known vulnerabilities. The résumé was rendered and visually inspected. GitHub Pages successfully deploys the site from `main` / `/(root)`.
+GitHub Actions checks 13 unit/DOM tests and 20 desktop/mobile Playwright cases, builds the production site, and audits dependencies. The résumé was rendered and visually inspected. GitHub Pages deploys the site from `main` / `/(root)`.
 
 ## Free GitHub Pages hosting
 
@@ -53,3 +53,7 @@ The validation workflow is independent of GitHub Pages’ own deployment workflo
 ## RentDesk
 
 The selected-work section includes the live RentDesk demo at https://rentdesk-alexprixman.onrender.com, its source repository, a dashboard screenshot, and its engineering case study. Demo accounts and fictional-data notices are shown in the app; payment checkout is simulated. Render Free can take about a minute to wake after inactivity.
+
+## CircleChat
+
+The selected-work section includes the live CircleChat app at https://circlechat-alexprixman.onrender.com and its source at https://github.com/AlexPrixman/websockets-chat. The illustrative chat preview is labeled as sample data. Its case study explains live delivery, persistent history, membership checks, private photo storage, and token revocation. The app has 22 server/API/auth tests, 11 frontend tests, and 6 desktop/mobile browser cases. Create an account to try the live app; free hosting may need time to wake after inactivity.
