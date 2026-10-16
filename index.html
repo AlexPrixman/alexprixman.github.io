@@ -451,11 +451,11 @@
               <p class="project-intro">a little closer. one conversation at a time.</p>
               <p class="project-description">
                 a responsive messenger with email/password accounts, direct and group conversations,
-                live messages, typing indicators, read receipts, and private photo sharing.
-                conversations stay available when you come back.
+                live messages, private photo and voice notes, and direct or group voice calls.
+                you can clear a chat for yourself while others keep their history.
               </p>
               <div class="tags" aria-label="CircleChat technologies">
-                <span>React</span><span>TypeScript</span><span>Socket.IO</span><span>PostgreSQL</span><span>Neon Auth</span><span>Playwright</span>
+                <span>React</span><span>TypeScript</span><span>Socket.IO</span><span>WebRTC</span><span>PostgreSQL</span><span>Neon Auth</span><span>Playwright</span>
               </div>
               <div class="project-links">
                 <a class="button dark" href="https://circlechat-alexprixman.onrender.com" target="_blank" rel="noopener noreferrer">try the live demo <span aria-hidden="true">↗</span></a>
@@ -483,17 +483,17 @@
               <div class="preview-footnote"><span>live conversations</span><span>desktop + mobile</span></div>
             </div>
             <div class="project-metrics">
-              <div><strong>22</strong><span>API, auth &amp; real-time tests</span></div>
+              <div><strong>26</strong><span>API, auth &amp; real-time tests</span></div>
               <div><strong>11</strong><span>frontend unit tests</span></div>
-              <div><strong>6</strong><span>desktop &amp; mobile browser tests</span></div>
+              <div><strong>12</strong><span>desktop &amp; mobile browser tests</span></div>
             </div>
           </article>
           <details class="case-study">
             <summary><span>the circlechat case study</span><span class="summary-hint">problem → decisions → result</span><span class="summary-icon" aria-hidden="true">+</span></summary>
             <div class="case-study-body">
-              <div><p class="eyebrow">the problem</p><h4>make a conversation feel immediate.</h4><p>a messenger needs more than a live connection. messages must survive reloads, photos must stay within the conversation, and sign-out must close access even when tokens have refreshed.</p></div>
-              <div><p class="eyebrow">the decisions</p><h4>pair live delivery with durable history.</h4><p>use Socket.IO for live updates and PostgreSQL for message history. enforce conversation membership in the API, normalize uploaded images, keep photos in private object storage, and persist token revocation.</p></div>
-              <div><p class="eyebrow">the result</p><h4>a working messenger, verified end to end.</h4><p>39 passing tests cover the API, frontend, and desktop/mobile browser flows. the live Render app uses Neon authentication, PostgreSQL, and private photo storage. messaging, photo access, restored sessions, logout, and data persistence were verified after deployment.</p></div>
+              <div><p class="eyebrow">the problem</p><h4>make a conversation feel immediate.</h4><p>messages and media must stay private to members, calls need to connect in real time, and clearing a chat for one person must preserve everyone else's history.</p></div>
+              <div><p class="eyebrow">the decisions</p><h4>pair live delivery with durable history.</h4><p>use Socket.IO for authenticated signaling and updates, WebRTC for peer audio, and PostgreSQL for messages and per-member history cutoffs. store photos and voice notes privately and persist token revocation.</p></div>
+              <div><p class="eyebrow">the result</p><h4>a working messenger, verified end to end.</h4><p>49 passing tests cover the API, frontend, and desktop/mobile browser flows. the live Render app uses Neon authentication, PostgreSQL, and private media storage. direct and group calls, voice notes, and private chat clearing join the messaging and session flows.</p></div>
             </div>
           </details>
         </div>
