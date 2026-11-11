@@ -57,3 +57,7 @@ The selected-work section includes the live RentDesk demo at https://rentdesk-al
 ## CircleChat
 
 The selected-work section includes the live CircleChat app at https://circlechat-alexprixman.onrender.com and its source at https://github.com/AlexPrixman/websockets-chat. The illustrative chat preview is labeled as sample data. Its case study explains live delivery, persistent history, private photos and voice notes, direct/group WebRTC calls, per-member chat clearing, and token revocation. The app has 26 server/API/auth tests, 11 frontend tests, and 12 desktop/mobile browser cases. Create an account to try the live app; free hosting may need time to wake after inactivity.
+
+## Negotium featured project
+
+Negotium is a proprietary Next.js + TypeScript SaaS in active development. The source repository is **private** and intentionally not linked in the public portfolio. The featured project card links to a standalone, browser-only interactive prototype at [negotium-demo.html](https://alexprixman.github.io/negotium-demo.html). This public preview simulates sample customers, products, invoices, premium module restrictions and subscription pricing without fetching or storing any real business data. It is not the production Next.js application, a payment service, or a DGII-compliant invoicing system.

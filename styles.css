@@ -1643,3 +1643,31 @@ h2 {
   .chat-preview-brand { display: none; }
   .chat-preview-stream { padding: 15px; }
 }
+
+
+/* Negotium: proprietary project showcased through a separate browser-only demo. */
+.negotium-card { margin-top:42px; }
+.negotium-visual { background:#dae6e0; }
+.negotium-private { display:inline-flex; align-items:center; gap:5px; color:var(--muted); font-size:10px; line-height:1.4; }
+.negotium-preview { display:grid; grid-template-columns:88px minmax(0,1fr); min-height:260px; border:1px solid #bdcfc9; border-radius:11px; overflow:hidden; box-shadow:0 18px 34px #18312b20; background:#f3f8f7; color:#173137; font-family:system-ui,sans-serif; }
+.negotium-preview-sidebar { background:#102e39; padding:16px 8px; color:#d9eeea; }
+.negotium-preview-brand { color:#d1eee9; font-size:25px; font-weight:900; margin:0 0 20px 7px; }
+.negotium-preview-brand span { color:#7dddc6; }
+.negotium-preview-link { font-size:9px; padding:9px 7px; color:#a7c5c1; border-radius:5px; }
+.negotium-preview-link.selected { background:#27525a; color:#9ff4dc; }
+.negotium-preview-link.locked { color:#94aaa9; }
+.negotium-preview-main { padding:19px 15px; min-width:0; }
+.negotium-preview-top { display:flex; justify-content:space-between; gap:10px; align-items:center; font-size:8px; color:#61807b; letter-spacing:.5px; margin-bottom:18px; }
+.negotium-preview-pill { border:1px solid #8db7ac; border-radius:12px; padding:4px 8px; color:#32675c; font-weight:800; }
+.negotium-preview-main>strong { font-size:17px; display:block; letter-spacing:-.5px; }
+.negotium-preview-main>small { font-size:9px; color:#7b928c; display:block; margin-top:4px; }
+.negotium-preview-stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
+.negotium-preview-stats>div { background:#fff; border:1px solid #d8e7e3; border-radius:6px; padding:12px 10px; }
+.negotium-preview-stats span,.negotium-preview-stats strong { display:block; }
+.negotium-preview-stats span { font-size:9px; color:#738b84; }
+.negotium-preview-stats strong { font-size:20px; margin-top:7px; }
+.negotium-preview-list { border:1px solid #d8e7e3; background:#fff; border-radius:7px; margin-top:10px; padding:11px; }
+.negotium-preview-list>span { display:block; color:#6c877e; font-size:9px; margin-bottom:7px; }
+.negotium-preview-list>div { display:flex; justify-content:space-between; gap:5px; border-top:1px solid #e7efed; padding:8px 0 0; margin-top:7px; font-size:8px; }
+.negotium-preview-list em { font-style:normal; color:#28695b; }
+@media(max-width:760px){.negotium-preview {grid-template-columns:95px minmax(0,1fr)}}

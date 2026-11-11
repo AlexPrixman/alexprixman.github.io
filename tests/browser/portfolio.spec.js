@@ -168,3 +168,22 @@ test("CircleChat is discoverable with working project links and case study", asy
   await expect(page.getByRole("heading", { name: "a working messenger, verified end to end." })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test("Negotium portfolio demo supports fictional customer and invoice creation", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: /negotium/i })).toBeVisible();
+  const link = page.locator('a[href="negotium-demo.html"]');
+  await expect(link).toHaveAttribute("rel", /noopener/);
+  await page.goto("/negotium-demo.html");
+  await expect(page.getByRole("heading", { name: /explore negotium/i })).toBeVisible();
+  await page.getByRole("button", { name: "Customers", exact: true }).click();
+  await page.getByLabel("Customer name").fill("Example Tester (sample)");
+  await page.getByRole("button", { name: "Add customer +" }).click();
+  await expect(page.getByText("Example Tester (sample)")).toBeVisible();
+  await page.getByRole("button", { name: "Invoicing" }).click();
+  await page.getByLabel("Customer", { exact: true }).selectOption({ label: "Example Tester (sample)" });
+  await page.getByRole("button", { name: "Create sample invoice +" }).click();
+  await expect(page.getByText("DEMO-1003")).toBeVisible();
+  await page.getByRole("button", { name: "Modules" }).click();
+  await expect(page.getByText(/RD\$5,000/)).toBeVisible();
+});
