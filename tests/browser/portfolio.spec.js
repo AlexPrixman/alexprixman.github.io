@@ -185,5 +185,5 @@ test("Negotium portfolio demo supports fictional customer and invoice creation",
   await page.getByRole("button", { name: "Create sample invoice +" }).click();
   await expect(page.getByText("DEMO-1003")).toBeVisible();
   await page.getByRole("button", { name: "Modules" }).click();
-  await expect(page.getByText(/RD\$5,000/)).toBeVisible();
+  await expect(page.locator(".saving strong")).toContainText("RD$5,000");
 });
