@@ -7,6 +7,7 @@ await rm(dest, { recursive: true, force: true });
 await mkdir(dest, { recursive: true });
 for (const name of [
   "index.html",
+  "negotium-demo.html",
   "404.html",
   "styles.css",
   "main.js",

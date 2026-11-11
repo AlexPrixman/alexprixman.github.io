@@ -228,3 +228,20 @@ test("without JavaScript the content, navigation and every engineering panel rem
   assert.equal(document.querySelector(".theme-toggle").hidden, true);
   window.close();
 });
+
+test("Negotium is featured with an interactive demo but no private source link", async () => {
+  const { window } = new JSDOM(html);
+  const doc = window.document;
+  const project = doc.querySelector('article[aria-labelledby="negotium-title"]');
+  assert.ok(project, "Featured Negotium project exists");
+  const link = project.querySelector('a[href="negotium-demo.html"]');
+  assert.ok(link, "Public standalone demo link exists");
+  assert.equal(link.getAttribute("target"), "_blank");
+  assert.match(project.textContent, /private repository/i);
+  assert.ok(!project.querySelector('a[href^="https://github.com/AlexPrixman/Negotium"]'), "Private source is not linked");
+  const demo = await readFile(new URL("../negotium-demo.html", import.meta.url), "utf8");
+  assert.match(demo, /Sandbox mode/);
+  assert.match(demo, /No account needed/i);
+  assert.doesNotMatch(demo, /github\.com\/AlexPrixman\/Negotium/i);
+  window.close();
+});
