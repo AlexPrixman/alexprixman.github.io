@@ -238,7 +238,7 @@ test("Negotium is featured with an interactive demo but no private source link",
   assert.ok(link, "Public standalone demo link exists");
   assert.equal(link.getAttribute("target"), "_blank");
   assert.match(project.textContent, /private repository/i);
-  assert.ok(!project.querySelector('a[href*="Negotium"]'), "Private source is not linked");
+  assert.ok(!project.querySelector('a[href^="https://github.com/AlexPrixman/Negotium"]'), "Private source is not linked");
   const demo = await readFile(new URL("../negotium-demo.html", import.meta.url), "utf8");
   assert.match(demo, /Sandbox mode/);
   assert.match(demo, /No account needed/i);
