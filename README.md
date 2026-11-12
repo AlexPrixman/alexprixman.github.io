@@ -61,3 +61,7 @@ The selected-work section includes the live CircleChat app at https://circlechat
 ## Negotium featured project
 
 Negotium is a proprietary Next.js + TypeScript SaaS in active development. The source repository is **private** and intentionally not linked in the public portfolio. The featured project card links to a standalone, browser-only interactive prototype at [negotium-demo.html](https://alexprixman.github.io/negotium-demo.html). This public preview simulates sample customers, products, invoices, premium module restrictions and subscription pricing without fetching or storing any real business data. It is not the production Next.js application, a payment service, or a DGII-compliant invoicing system.
+
+## Actual Negotium Next.js deployment
+
+The portfolio's featured project links primarily to the **actual Next.js + TypeScript app** at https://negotium-alexprixman.onrender.com/demo/. It is built from the private Negotium repository using a Render Static Site. The portfolio keeps its independent browser-only prototype as an optional fallback. Neither public site exposes the GitHub source repository; both are limited to a fictional-data frontend preview. The hosted Next.js app does not yet implement secure tenant storage, logins, payments, or DGII-compliant invoicing.
