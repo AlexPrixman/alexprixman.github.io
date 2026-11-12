@@ -236,6 +236,9 @@ test("Negotium is featured with an interactive demo but no private source link",
   assert.ok(project, "Featured Negotium project exists");
   const link = project.querySelector('a[href="negotium-demo.html"]');
   assert.ok(link, "Public standalone demo link exists");
+  const live = project.querySelector('a[href="https://negotium-alexprixman.onrender.com/demo/"]');
+  assert.ok(live, "Live Next.js application link exists");
+  assert.match(live.textContent, /live Next\.js app/i);
   assert.equal(link.getAttribute("target"), "_blank");
   assert.match(project.textContent, /private repository/i);
   assert.ok(!project.querySelector('a[href^="https://github.com/AlexPrixman/Negotium"]'), "Private source is not linked");
